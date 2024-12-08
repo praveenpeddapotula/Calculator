@@ -8,7 +8,6 @@ pipeline {
             stage ('checkout') {
                 steps {
                     echo "source code is here only"
-
                 }
             }
             stage ('build') {

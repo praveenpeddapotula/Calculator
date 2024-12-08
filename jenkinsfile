@@ -14,6 +14,7 @@ pipeline {
                 steps {
                     echo "building artifacts using maven tool"
                      withEnv(["JAVA_TOOL_OPTIONS=-Djava.awt.headless=true"]) {
+                        sh 'mvn test -DskipITs'
                          sh 'mvn clean package'
                      }
                 }

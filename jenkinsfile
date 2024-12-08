@@ -13,7 +13,9 @@ pipeline {
             stage ('build') {
                 steps {
                     echo "building artifacts using maven tool"
-                    sh 'mvn clean package'
+                     withEnv(["JAVA_TOOL_OPTIONS=-Djava.awt.headless=true"]) {
+                         sh 'mvn clean package'
+                     }
                 }
             }
         }
